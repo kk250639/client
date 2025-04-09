@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* 자식 selector */
+        div>img {
+            width: 200px;
+        }
+        a>img {
+            width: 500px;
+        }
+
+        /* 자손 selector */
+        div img {
+            border: 5px solid blue;
+        }
+        div span {
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="../html/바탕화면1.jpg" alt="">
+        <a href="">
+            <img src="../html/바탕화면1.jpg" alt="">
+        </a>
+    </div>
+
+    <div>
+        <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore architecto ullam accusantium porro necessitatibus, aspernatur illum nam error consequuntur rerum iste minima perferendis aperiam eveniet distinctio hic temporibus autem soluta?</span>
+        <h1>Lorem, ipsum.<span>Lorem.</span></h1>
+    </div>
+    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor quidem rem distinctio ullam magnam nobis magni labore tempora doloribus quam aspernatur laborum, accusamus sapiente recusandae nihil omnis odit at soluta.</span>
+</body>
+</html>

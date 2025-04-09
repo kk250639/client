@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- html>head+body -->
+<html>
+<head>
+    <style>
+        /* 형제 selector() */
+        h2 + p {
+            background-color: gold;
+        }
+        h1 + p {
+            backgroud-color: skyblue;
+        }
+        div > p {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- (h1>lorem^p>lorem)+(h2>lorem1^p>lorem) -->
+    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit facere quas, quidem cumque qui dolores molestias, porro amet pariatur laborum veritatis. Maxime, impedit! Saepe ea veritatis necessitatibus aliquid, ratione deserunt!</h1>
+    <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis earum non dolor accusantium cum soluta magnam molestias. Consectetur beatae, quisquam eaque nihil totam eveniet modi ea eius aut, expedita eligendi!
+        <h2>Lorem.</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, quos expedita nihil voluptates accusantium eum corporis delectus illo aspernatur, aliquid iste explicabo quas quasi animi. Aut sed hic voluptatum neque?</p>
+    </p>
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est vel consectetur asperiores sit iste in provident, nulla cumque nostrum? Non numquam veritatis excepturi libero dolorum aut odio tempora accusamus facere!</p>
+    </div>
+    <!-- table>thead+tbody -->
+    <table>
+        <thead></thead>
+        <tbody></tbody>
+    </table>
+    <!-- h1+p -->
+    <h1></h1>
+    <p></p>
+</body>
+</html>
