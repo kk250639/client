@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* pseudo class(허위)있는 것처럼 쓰는거 */
+        h1:nth-child(odd) {
+            background-color: blue;
+        }
+        h1.head {
+            color: yellow;
+        }
+        /* nth-child 특정 순서의 자식에게 부여 */
+        /* 첫번쨰 자식한테 5px solid green; 모든 첫번째 h1에 적용 */
+        h1:nth-child(1) {
+            border: 5px solid green;
+        }
+        /* 두번째 자식한테 9px dotted red; 모든 두번쨰 h1에 적용 */
+        h1:nth-child(2) {
+            border: 9px dotted red;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="head">Lorem.</h1>
+    <h1 class="head">Deleniti.</h1>
+    <h1>Aperiam.</h1>
+    <h1>Ratione!</h1>
+    <h1>Vitae?</h1>
+    <h1>Voluptatibus.</h1>
+    <h1>Rerum.</h1>
+    <h1>Nesciunt!</h1>
+    <h1>Aut.</h1>
+    <h1>Blanditiis.</h1>
+    <h1>Ducimus?</h1>
+    <h1>Vitae!</h1>
+    <h1>Distinctio?</h1>
+    <h1>Voluptatum!</h1>
+    <h1>Quod?</h1>
+    <h1>Voluptatibus?</h1>
+    <h1>Sint!</h1>
+    <h1>Totam!</h1>
+    <h1>Architecto?</h1>
+    <h1>Quos?</h1>
+    <div>
+        <h1>Lorem.</h1>
+        <h1>Quibusdam.</h1>
+        <h1>Quisquam.</h1>
+        <h1>Praesentium!</h1>
+        <h1>Modi.</h1>
+    </div>
+</body>
+</html>
