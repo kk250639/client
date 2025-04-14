@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+        }
+
+        div:nth-child(odd) {
+            background-color: beige;
+        }
+
+        div:nth-child(even) {
+            background-color: skyblue;
+        }
+
+        #item2 {
+            /* 원래위치에서 */
+            position: relative;
+
+            /* left, right , too ,bottom: ; */
+            /* ~에서 얼마나 멀어지게 */
+            top: 20px;
+            right: 10px;
+            /* 본인이 있던 기준으로 위로 20px 오른쪽으로 10px 이동 */
+        }
+
+        #item4 {
+            /* viewfont 기준으로 */
+            position: fixed;
+            top:0px;
+            right: 0px;
+
+
+            /* left ,right ,to */
+                /* tope: 0px;p, btoon */
+            
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- #item$*3{$} -->
+    <div id="item1">1</div>
+    <div id="item2">2</div>
+    <div id="item3">3</div>
+
+    <hr>
+
+    <div id="item4">4</div>
+</body>
+
+</html>

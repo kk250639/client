@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sub-menu-container {
+            display: none;
+            position: absolute;
+            top: 23px;
+            left: 5px;
+        }
+
+        .drop-down:hover>.sub-menu-container {
+            display: block;
+        }
+
+        .drop-down {
+            background: gray;
+            position: relative
+        }
+        .main-button {
+            width: 300px;
+            height: 23px;
+            background-color: beige;
+        }
+        .main-button:hover {
+            background-color: blanchedalmond;
+        }
+        .sub-menu-item {
+            background-color: white;
+            width: 200px;
+            height: 40px;
+        }
+        .sub-menu-item:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="drop-down">
+        <div class="main-button">
+            <!-- <div class="a"> -->
+            hover over me
+        </div>
+        <div class="sub-menu-container">
+            <div class="sub-menu-item">link1</div>
+            <div class="sub-menu-item">link2</div>
+            <div class="sub-menu-item">link3</div>
+        </div>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident dolorem aut beatae in? Ab in accusantium
+        magnam voluptate quidem rem pariatur! In accusamus eum pariatur adipisci est expedita nesciunt illum.</p>
+</body>
+
+</html>
