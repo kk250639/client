@@ -13,26 +13,25 @@
 </head>
 
 <body>
-    <input type="text" id="input1">
-
-    <input type="text" id="input2">
-
-    <button class="btn btn-primary" id="plusButton">+</button>
+    나이 : <input type="text" id="input1">
+    <button id="btn1" class="btn btn-secondary">결과</button>
     <hr>
-    <input type="text" id="resultInput">
+    <h3 id="result"></h3>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"></script>
 
     <script>
-        funtion abcd() {
-            let num1 = document.querySelector("#input1").value;
-            let num2 = document.querySelector("#input2").value;
+        function check() {
+            let age = document.querySelector("#input1").value;
+            age = Number(age);
 
-            let result = Number(num1) + Number(num2)
-            document.querySelector("#resultInput").value
+            let result = (age >= 18) ? "투표 가능" : "투표 불가능";
+            
+            document.querySelector("#result").innerText = result;
         }
-        document.querySelector("#resultInput").value = result
+        document.querySelector("#btn1").onclick = check;
+
 
 
 
