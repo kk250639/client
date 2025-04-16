@@ -19,31 +19,30 @@
         crossorigin="anonymous"></script>
 
     <script>
-        // if.html
+        // 35if.html
+        console.log(1);
         if (true) {
-            console.log(1);
             console.log(2);
-        }
-        // if : ()조건이 true(truthy)이면 {}코드블럭이이 실행됨
-        //      ()조건이 false(falsy)이면 {}코드블럭이 실행안됨
-        // 조건문, 분기문(bracnch)
-        if (false) {
             console.log(3);
+        } else {
             console.log(4);
+            console.log(5);
         }
-        console.log(5);
-        console.log(6);
-        console.log(7);
 
-        console.log(11);
-        console.log(12);
-        if (false) {
-            console.log(13);
-            // if 사용해서 13, 14가 출력되지 않도록 코드 작성
-            console.log(14);
+        if (true) {
+            console.log(6);
+            if (ture) {
+                console.log(7);
+            } else if (true) {
+                console.log(8);
+            } else {
+                console.log(9);
+            }
         }
-        console.log(15);
-        console.log(16);
+
+
+
+
     </script>
 </body>
 

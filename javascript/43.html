@@ -19,31 +19,33 @@
         crossorigin="anonymous"></script>
 
     <script>
-        // if.html
+        // code-block
+        // 코드 블럭 내의 코드는 같은 들여쓰기 사용
         if (true) {
             console.log(1);
-            console.log(2);
-        }
-        // if : ()조건이 true(truthy)이면 {}코드블럭이이 실행됨
-        //      ()조건이 false(falsy)이면 {}코드블럭이 실행안됨
-        // 조건문, 분기문(bracnch)
-        if (false) {
-            console.log(3);
-            console.log(4);
-        }
-        console.log(5);
-        console.log(6);
-        console.log(7);
+            if (true) {
+                console.log(2);
+                console.log(6);
+            } else if (true) {
+                console.log(3);
+                console.log(7);
+            }
 
-        console.log(11);
-        console.log(12);
-        if (false) {
-            console.log(13);
-            // if 사용해서 13, 14가 출력되지 않도록 코드 작성
-            console.log(14);
+        } else if (true) {
+            console.log(4);
+            console.log(8);
+        } else {
+            console.log(5);
+            console.log(9);
         }
-        console.log(15);
-        console.log(16);
+        // 코드블록이 한 줄이면 {} 생략 가능 하지만 꼭 작성
+        if (true) {
+            console.log("a")
+        }
+        if (true) {
+            console.log("b");
+        }
+
     </script>
 </body>
 

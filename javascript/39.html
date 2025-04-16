@@ -19,31 +19,26 @@
         crossorigin="anonymous"></script>
 
     <script>
-        // if.html
-        if (true) {
-            console.log(1);
-            console.log(2);
-        }
-        // if : ()조건이 true(truthy)이면 {}코드블럭이이 실행됨
-        //      ()조건이 false(falsy)이면 {}코드블럭이 실행안됨
-        // 조건문, 분기문(bracnch)
-        if (false) {
-            console.log(3);
-            console.log(4);
-        }
-        console.log(5);
-        console.log(6);
-        console.log(7);
+        //switch.html
+        let a = "normal";
+        //일치하는 case부터 break;까지 실행
+        switch (a) {
+            case "normal":
+                console.log(1);
+                break;
+            case "horror":
+                console.log(2);
+                break;
+            case "action":
+                console.log(3);
+                break;
 
-        console.log(11);
-        console.log(12);
-        if (false) {
-            console.log(13);
-            // if 사용해서 13, 14가 출력되지 않도록 코드 작성
-            console.log(14);
         }
-        console.log(15);
-        console.log(16);
+        console.log();
+        
+
+
+
     </script>
 </body>
 
