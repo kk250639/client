@@ -13,14 +13,7 @@
 </head>
 
 <body>
-    텍스트 :
-    <!-- input#input1 -->
-    <input type="text" id="input1">
-    <!-- input:number[min=1][max=5]#input2 -->
-    <input type="number" name="" id="input2" min="1" max="5">
-
-    <!-- button#btn1.btn.btn-primary -->
-    <button id="btn1" class="btn btn-primary">출력</button>
+    <a href="http://127.0.0.1:3000/javascript/55.html">ㅇ</a>
 
 
 
@@ -29,19 +22,19 @@
         crossorigin="anonymous"></script>
 
     <script>
-        function print() {
-            let text = document.querySelector("#input1").value;
-            let number = document.querySelector("#input2").value;
-            number = Number(number);
+        //parameter.html
+        // function의 () : 파라미터(매개변수)
+        // = 함수 호출할 때 값을 받음
+        function myCode(p1) {
+            console.log("hi", p1);
 
-            for (let count = 0; count < number; count++) {
-                console.log(text);
-            }
         }
-        document.querySelector("#btn1").onclick = print;
 
-
-
+        myCode(9); // argument(인자, 인수)함수 호출할 때 던져준 값
+        myCode(10);
+        
+        // *참고*
+        // parmeter와 argument는 바꾸어 사용 가능(모호하게 사용)
     </script>
 </body>
 

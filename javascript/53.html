@@ -13,14 +13,7 @@
 </head>
 
 <body>
-    텍스트 :
-    <!-- input#input1 -->
-    <input type="text" id="input1">
-    <!-- input:number[min=1][max=5]#input2 -->
-    <input type="number" name="" id="input2" min="1" max="5">
-
-    <!-- button#btn1.btn.btn-primary -->
-    <button id="btn1" class="btn btn-primary">출력</button>
+    <a href="http://127.0.0.1:3000/javascript/54.html">ㅇ</a>
 
 
 
@@ -29,19 +22,30 @@
         crossorigin="anonymous"></script>
 
     <script>
+        // function print() {
+        //     console.log("hello");
+
+        // }
+
+        // 변수 선언 후 사용
+        let a = 3;
+        console.log(a);
+
+
+        console.log(1);
+        print();
+        myCode();
+        console.log(2);
+
+       // 변수는 정의를 나중에 할 수 없음 함수는 정의를 나중에 할 수 있음
+       // function hoising 해당 범위의 최상단으로 끌어올리는 작업
         function print() {
-            let text = document.querySelector("#input1").value;
-            let number = document.querySelector("#input2").value;
-            number = Number(number);
-
-            for (let count = 0; count < number; count++) {
-                console.log(text);
-            }
+            console.log("hello");
         }
-        document.querySelector("#btn1").onclick = print;
-
-
-
+        function myCode() {
+            console.log("hi");
+            
+        }
     </script>
 </body>
 

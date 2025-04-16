@@ -13,14 +13,7 @@
 </head>
 
 <body>
-    텍스트 :
-    <!-- input#input1 -->
-    <input type="text" id="input1">
-    <!-- input:number[min=1][max=5]#input2 -->
-    <input type="number" name="" id="input2" min="1" max="5">
-
-    <!-- button#btn1.btn.btn-primary -->
-    <button id="btn1" class="btn btn-primary">출력</button>
+<a href="http://127.0.0.1:3000/javascript/68.html">다음 페이지로 가기</a>
 
 
 
@@ -29,18 +22,21 @@
         crossorigin="anonymous"></script>
 
     <script>
-        function print() {
-            let text = document.querySelector("#input1").value;
-            let number = document.querySelector("#input2").value;
-            number = Number(number);
-
-            for (let count = 0; count < number; count++) {
-                console.log(text);
-            }
+        function myCode() {
+            // ...여러 실행 코드...
+            return 300; // 흐름 돌리기, 값 돌려주기
         }
-        document.querySelector("#btn1").onclick = print;
 
+        let a = 3;
+        a = myCode();
+        let b = myCode();
 
+        console.log(a);
+        console.log(b);
+        console.log(myCode());
+        
+
+        console.log("다음 실행 코드들...");        
 
     </script>
 </body>

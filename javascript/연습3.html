@@ -13,14 +13,7 @@
 </head>
 
 <body>
-    텍스트 :
-    <!-- input#input1 -->
-    <input type="text" id="input1">
-    <!-- input:number[min=1][max=5]#input2 -->
-    <input type="number" name="" id="input2" min="1" max="5">
 
-    <!-- button#btn1.btn.btn-primary -->
-    <button id="btn1" class="btn btn-primary">출력</button>
 
 
 
@@ -29,18 +22,34 @@
         crossorigin="anonymous"></script>
 
     <script>
-        function print() {
-            let text = document.querySelector("#input1").value;
-            let number = document.querySelector("#input2").value;
-            number = Number(number);
+        let a = 3;
+        let b = 5;
+        a = 7;
 
-            for (let count = 0; count < number; count++) {
-                console.log(text);
-            }
-        }
-        document.querySelector("#btn1").onclick = print;
+        let c = -100;
+        c = 0;
+        c = 100;
 
+        let d = 3.14;
+        d = -3.14;
 
+        let e = "hello";
+        let f = 'javascript'
+        console.log(f);
+
+        let g = `world`;
+        let h = "I'm trump"
+        let i = 'My name is "trump"'
+        let j = `I'm trump. My name is "trump"`;
+        let k = `여러 줄을 
+        작성 할 수도
+        있습니다.`;
+        console.log(k);
+        
+        let z = 900;
+        console.log(z);
+        
+        
 
     </script>
 </body>

@@ -13,14 +13,7 @@
 </head>
 
 <body>
-    텍스트 :
-    <!-- input#input1 -->
-    <input type="text" id="input1">
-    <!-- input:number[min=1][max=5]#input2 -->
-    <input type="number" name="" id="input2" min="1" max="5">
-
-    <!-- button#btn1.btn.btn-primary -->
-    <button id="btn1" class="btn btn-primary">출력</button>
+    <a href="http://127.0.0.1:3000/javascript/70.html">다음 페이지로 가기</a>
 
 
 
@@ -29,16 +22,21 @@
         crossorigin="anonymous"></script>
 
     <script>
-        function print() {
-            let text = document.querySelector("#input1").value;
-            let number = document.querySelector("#input2").value;
-            number = Number(number);
+        // 69return.html
 
-            for (let count = 0; count < number; count++) {
-                console.log(text);
-            }
+        function add(x, y) {
+            // let r = x + y;
+            // return r;
+            return x + y;
         }
-        document.querySelector("#btn1").onclick = print;
+
+
+        let a = add(3, 4);
+        let b = add(9, 10);
+        let c = add(1, 10);
+
+        console.log(a, b, c); // 7 19 11
+
 
 
 
