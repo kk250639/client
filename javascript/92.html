@@ -13,7 +13,6 @@
 </head>
 
 <body>
-    <a href="http://127.0.0.1:3000/javascript/73.html">다음 페이지로 가기</a>
 
 
 
@@ -22,32 +21,18 @@
         crossorigin="anonymous"></script>
 
     <script>
-        // 72scope.html
-        let a = 3;
-        console.log(a);
-        // console.log(b);
-
-
-        if (true) {
-            // 코드 블록
-            console.log(a);
-
-            // 변수는 선언된 코드블록 내에서만 사용 가능
-            // 변수 scope: 선언된 코드블록 내
-            let b = 5;
-            console.log(a);
-            console.log(b);
+        // 92parameter.html
+        //a함수, b함수 (arrow function)
+        let a = (x, y) => // console.log(x + y); 
+            {
+            // let z = console.log(x + y);
             
-            if (true) {
-                console.log(b);
-                
-            }
-
         }
+        let b = (s) => console.log(s*3);
 
-        console.log(a);
-        console.log(b);
-        
+        a(3, 4); // 7
+        b(5); // 15
+
 
 
 

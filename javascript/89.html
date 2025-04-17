@@ -13,7 +13,6 @@
 </head>
 
 <body>
-    <a href="http://127.0.0.1:3000/javascript/73.html">다음 페이지로 가기</a>
 
 
 
@@ -22,34 +21,32 @@
         crossorigin="anonymous"></script>
 
     <script>
-        // 72scope.html
-        let a = 3;
-        console.log(a);
-        // console.log(b);
-
-
-        if (true) {
-            // 코드 블록
-            console.log(a);
-
-            // 변수는 선언된 코드블록 내에서만 사용 가능
-            // 변수 scope: 선언된 코드블록 내
-            let b = 5;
-            console.log(a);
-            console.log(b);
-            
-            if (true) {
-                console.log(b);
-                
-            }
+        let a = function() {
+            console.log("일반 함수코드 1");
+        console.log("일반 함수코드 2");
+        }
+        let b = () => {
+            console.log("화살표 함수 코드1");
+            console.log("화살표 함수 코드2");
 
         }
+        a();
+        b();
 
-        console.log(a);
-        console.log(b);
-        
+        // arrow function의 코드가 한 줄이면
+        // {} 생략 가능 
+        let c = () => {
+            console.log("다른 화살표 함수 코드 1");
 
+        }
+        c();
 
+        let d = () => {
+            console.log("hello javascript");
+        }
+
+        // arrow function d 만들기
+        d(); // "hello javascript" 출력
 
     </script>
 </body>

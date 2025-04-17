@@ -13,7 +13,6 @@
 </head>
 
 <body>
-    <a href="http://127.0.0.1:3000/javascript/73.html">다음 페이지로 가기</a>
 
 
 
@@ -22,34 +21,25 @@
         crossorigin="anonymous"></script>
 
     <script>
-        // 72scope.html
-        let a = 3;
-        console.log(a);
-        // console.log(b);
-
-
-        if (true) {
-            // 코드 블록
-            console.log(a);
-
-            // 변수는 선언된 코드블록 내에서만 사용 가능
-            // 변수 scope: 선언된 코드블록 내
-            let b = 5;
-            console.log(a);
-            console.log(b);
-            
-            if (true) {
-                console.log(b);
+        let a = {
+            name: "트럼프",
+            age: 77,
+            display: () => {
+                let text = "이름은 " + a.name + "이고 나이는 " + a.age + "세 입니다";
+                console.log(text);
                 
             }
-
         }
+        a.display(); // 이름은 트럼프이고 나이는 77세 입니다.
+        a.name = "일론";
+        a.age = 55
+        a.display(); // 
 
-        console.log(a);
-        console.log(b);
-        
-
-
+        let b = {};
+        b.name= "테슬라"
+        b.age = 99;
+        b.display = a.display;
+        b.display();
 
     </script>
 </body>

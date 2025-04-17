@@ -13,7 +13,6 @@
 </head>
 
 <body>
-    <a href="http://127.0.0.1:3000/javascript/73.html">다음 페이지로 가기</a>
 
 
 
@@ -22,34 +21,27 @@
         crossorigin="anonymous"></script>
 
     <script>
-        // 72scope.html
-        let a = 3;
-        console.log(a);
-        // console.log(b);
+        // hoisting.html
 
 
-        if (true) {
-            // 코드 블록
-            console.log(a);
 
-            // 변수는 선언된 코드블록 내에서만 사용 가능
-            // 변수 scope: 선언된 코드블록 내
-            let b = 5;
-            console.log(a);
-            console.log(b);
-            
-            if (true) {
-                console.log(b);
-                
-            }
+        myCode();
+
+        // 함수 hoisting은 이름 있는 함수만 적용 
+        function myCode() {
+            console.log("myCode 1");
 
         }
 
-        console.log(a);
-        console.log(b);
-        
+        // hoisting 되지 않음
+        let a = function() {
+            console.log("이름 없는 함수 anonymous function");
+            
+        }
+        a();
 
-
+// hoisting 되는지 안되는지 고민하지 말고
+// 함수는 위에 선언 후 사용하는 습관.
 
     </script>
 </body>

@@ -13,7 +13,6 @@
 </head>
 
 <body>
-    <a href="http://127.0.0.1:3000/javascript/.html">다음 페이지로 가기</a>
 
 
 
@@ -22,9 +21,27 @@
         crossorigin="anonymous"></script>
 
     <script>
+        // parameter.html
+        let a = function (a, b) {
+            console.log(a, b);
+
+        }
+        let b = (a, b) => {
+            console.log(a, b);
+
+        }
+        
+        let d = (a) => console.log(a);
+        let e = a => console.log(a);
         
 
-
+        a(3, 5);
+        a("hi", "hello");
+        b("java", "script");
+        b(11, 22);
+        c(33, 44);
+        d("java");
+        e("script");
 
 
     </script>
