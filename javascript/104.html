@@ -21,25 +21,40 @@
         crossorigin="anonymous"></script>
 
     <script>
-        let a = {
-            name: "트럼프",
-            age: 77,
-            display: function() {
-                let text = "이름은 " + this.name + "이고 나이는 " + this.age + "세 입니다";
-                console.log(text);
-                
-            }
+        function func1(param) {
+            param.name = "trump";
         }
-        a.display(); // 이름은 트럼프이고 나이는 77세 입니다.
-        a.name = "일론";
-        a.age = 55
-        a.display(); // 
 
-        let b = {};
-        b.name= "테슬라"
-        b.age = 99;
-        b.display = a.display;
-        b.display();
+        let a = {
+            name: "elon"
+        }
+
+        console.log(a.name);    // elon
+        func1(a);
+        console.log(a.name);    // trump
+
+        function func2() {
+            return {
+                value: 55
+            };
+        }
+
+        let b = func2();
+        console.log(b.value);   // 55
+        let c = func2();
+        console.log(c.value);   // 55
+        c.value = 66;
+        console.log(c.value);   // 66
+        console.log(b.value);   // 55   
+
+        let d = { value: 77 };
+        let e = { value: 77 };
+        e.value = 88;
+        console.log(d.value);
+        console.log(e.value);
+
+
+
 
     </script>
 </body>

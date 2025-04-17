@@ -21,25 +21,27 @@
         crossorigin="anonymous"></script>
 
     <script>
-        let a = {
-            name: "트럼프",
-            age: 77,
-            display: function() {
-                let text = "이름은 " + this.name + "이고 나이는 " + this.age + "세 입니다";
-                console.log(text);
-                
-            }
+        // 102reference.html
+        function change1(param) {
+            param = 5;
         }
-        a.display(); // 이름은 트럼프이고 나이는 77세 입니다.
-        a.name = "일론";
-        a.age = 55
-        a.display(); // 
-
-        let b = {};
-        b.name= "테슬라"
-        b.age = 99;
-        b.display = a.display;
-        b.display();
+        function change2(param) {
+            param.value = 55;
+        }
+        let a = 3;
+        // b에 저장된 값은 참조값 (reference)
+        let b = {
+            value: 33
+        };
+        console.log(a);
+        console.log(b.value);
+        
+        change1(a);
+        change2(b);
+        console.log(a);
+        console.log(b.value);   // 55
+        
+        
 
     </script>
 </body>

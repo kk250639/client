@@ -55,16 +55,15 @@
         a.show("hello");
         a.display("곤니찌와");
 
-        // let e = {
-        //     firstName: "elon",
-        //     lastName: "musk"
-        //     // 일반 함수 this: 이 메소드를 가진 객체
-        //     printFullName: () => {
-        //         console.log(this.firstName, this.lastName);
-                
-        //     }
-        // }
-        // e.printFullName(); // elon musk
+        let e = {
+            firstName: "elon",
+            lastName: "musk",
+            // 일반 함수 this: 이 메소드를 가진 객체
+            printFullName: function() {
+                console.log(this.firstName, this.lastName); 
+            }
+        }
+        e.printFullName(); // elon musk
 
         let firstName = "알버트";
         let lastName = "아인슈타인";
