@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+
+    <script>
+         let books = [];
+
+// 사용자에게 3권의 도서 정보 입력받기
+for (let i = 0; i < 3; i++) {
+    let book = {};
+    book.name = prompt(`(${i + 1}) 책 제목을 입력하세요`);
+    book.author = prompt(`(${i + 1}) 책 저자를 입력하세요`);
+    book.price = Number(prompt(`(${i + 1}) 책 가격을 입력하세요`)); // 숫자로 변환
+    books.push(book);
+}
+
+// 모든 도서 정보 출력
+let result = "<h3>📚 입력한 도서 목록</h3>";
+for (let book of books) {
+    result += `제목: ${book.name}, 저자: ${book.author}, 가격: ${book.price}원<br>`;
+}
+
+// 가장 비싼 책 찾기
+let maxBook = books[0];
+for (let book of books) {
+    if (book.price > maxBook.price) {
+        maxBook = book;
+    }
+}
+
+// 가장 비싼 도서 정보 출력
+result += `<h3>💰 가장 비싼 도서</h3>`;
+result += `제목: ${maxBook.name}, 저자: ${maxBook.author}, 가격: ${maxBook.price}원`;
+
+document.write(result);
+
+
+
+
+    </script>
+</body>
+
+</html>
