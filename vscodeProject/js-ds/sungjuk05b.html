@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <script>
+        let sungjuks = JSON.parse(localStorage.getItem("sungjuks"));
+
+        // 출력
+        let result = '';
+        for (let sj of sungjuks) {
+            result += `이름 : ${sj.name}, 국어 : ${sj.kor}, 영어 : ${sj.eng}, 수학 : ${sj.math} <br>`;
+            result += `총점 : ${sj.tot}, 평균 : ${sj.avg}, 학점 : ${sj.grd} <p>`;
+        }
+        document.write(result);
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+
+    <script>
+        
+
+
+
+
+    </script>
+</body>
+
+</html>

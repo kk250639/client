@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <title>성적 처리프로그램</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1>성적 처리프로그램</h1>
+
+    <script>
+        // 입력
+        // localstorage에 저장된 데이터를 메모리로 읽어옴
+        // localstorage.getitem(키):
+
+        let names = JSON.parse(localStorage.getItem("names"));
+        let kors = JSON.parse(localStorage.getItem("kors"));
+        let engs = JSON.parse(localStorage.getItem("engs"));
+        let maths = JSON.parse(localStorage.getItem("maths"));
+        let tots = JSON.parse(localStorage.getItem("tots"));
+        let avgs = JSON.parse(localStorage.getItem("avgs"));
+        let grds = JSON.parse(localStorage.getItem("grds"));
+
+        // 출력
+        let result = '';
+        for (let i = 0; i < names.length; ++i) {
+            result += `이름 : ${names[i]}, 국어 : ${kors[i]}, 영어 : ${engs[i]}, 수학 : ${maths[i]}<br>`;
+            result += `총점 : ${tots[i]}, 평균 : ${avgs[i]}, 학점 : ${grds[i]} <p>`;
+        }
+        document.write(result);
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+
+
+
+
+    </script>
+</body>
+
+</html>
