@@ -10,14 +10,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+
+    </style>
 </head>
 
 <body>
-    <!-- .container>.row>.col -->
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-6">
-                <!-- .d-flex.justify-content-center.align-items-center -->
                 <div class="d-flex justify-content-center align-items-center py-5">
                     <h1>TODO LIST</h1>
                 </div>
@@ -29,7 +30,6 @@
                 </div>
             </div>
             <div class="col-12 col-lg-6 mt-4">
-                <!-- ul#list1.list-group -->
                 <ul id="list1" class="list-group">
 
                 </ul>
@@ -37,39 +37,25 @@
         </div>
     </div>
 
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"></script>
-    <script>
 
-        // 여러 요소에 사용될 아이디 번호 
+    <script>
         let globalSequence = 0;
 
-        // + 클릭하면
-        document.querySelector("#btn1").addEventListener("click", function () {
-            // sequence 1 더하기
+        // btn1을 클릭할 때 실행
+        document.querySelector("#btn1").addEventListener("click", () => {
             globalSequence++;
 
             let sequence = globalSequence;
-
-            // input에 있는 value를 읽어서
-            let input = document.querySelector("#input1");
-            let v = input.value;
-
-            // input value 초기화
-            input.value = "";
-
-            // 새 li 만들어서
-            // let newItem = document.createElement("li");
-            // let newdiv = document.createElement("div");
-            // newdiv.textContent = v;
-            // newItem.append(newdiv);
-            // newItem.className = "list-group-item d-flex justify-content-between";
-
-            let newItem = document.createElement("li");
-            newItem.className = "list-group-item d-flex justify-content-between";
-
-            newItem.innerHTML = `
+            let input = document.querySelector("#input1");  // input에 입력된 걸받아
+            let v = input.value;                            // v에 부여
+            input.value = "";                               // value는 빈칸
+            let newItem = document.createElement("li");     // li를 새로 만들어 newItem으로 지정
+            newItem.className = "list-group-item d-flex justify-content-between";   // 그 li에 클래스를 부여하고 innerHTML에 든것(대충 완료버튼 삭제버튼 등)을 삽입
+            newItem.innerHTML = `                                                   
                         <div id="todo-text-${sequence}">${v}</div>
                         <div>
                             <div class="d-flex gap-2">
@@ -81,41 +67,26 @@
                                 </button>
                             </div>
                         </div>
-            `;
+        `;
 
-            // ul에 붙이기
-            let ul = document.querySelector("#list1");
+            let ul = document.querySelector("#list1");  // 위의 것을 ul의 마지막자식으로 넣겠다는 뜻
             ul.append(newItem);
 
-            // dom 에 있는 done-btn-1 버튼에 click event 함수 추가하기
-            let doneBtn = document.querySelector(`#done-btn-${sequence}`);
-            doneBtn.addEventListener("click", function () {
-                // 텍스트가 있는 요소에
+            let doneBtn = document.querySelector(`#done-btn-${sequence}`);  // 완료버튼에 시퀀스 부여
+            doneBtn.addEventListener("click", () => {                       // 완료버튼을 눌렀을 때 이걸 실행
                 let textDiv = document.querySelector(`#todo-text-${sequence}`);
-                // text-decoration-line-through 클래스 추가 / 삭제
                 textDiv.classList.toggle("text-decoration-line-through");
-
-                // text-decoration-line-through 클래스가 있으면
-                if (textDiv.classList.contains("text-decoration-line-through")) {
-                    // 버튼 내용을 back 아이콘으로
-                    doneBtn.innerHTML = `<i class="fa-solid fa-rotate-left"></i>`;
-                    // 버튼 색 secondary 로
+                if (textDiv.classList.contains("text-decoration-line-through")) {   // 만약 완료버튼을 누르면 버튼을 바꾸고 줄긋기
+                    doneBtn.innerHTML = `<i class="fa-solid fa-rotate-left"></i>`;  
                     doneBtn.classList.add("btn-outline-secondary");
                     doneBtn.classList.remove("btn-outline-info");
-                } else {
-                    // 없으면 check 아이콘으로
+                } else {                                                            // 만약 한번더 누른다면 줄을 제거하고 다시 버튼 바꾸기
                     doneBtn.innerHTML = `<i class="fa-solid fa-check"></i>`;
-
-                    // 버튼 색 info 로
                     doneBtn.classList.remove("btn-outline-secondary");
                     doneBtn.classList.add("btn-outline-info");
                 }
-
             });
-
-            // remove-btn-숫자 버튼을 클릭하면
-            document.querySelector(`#remove-btn-${sequence}`).addEventListener("click", function () {
-                // newItem 객체 삭제
+            document.querySelector(`#remove-btn-${sequence}`).addEventListener("click", () => { // 만약 삭제 버튼을 누르면 새로 작성된 li를 지움
                 newItem.remove();
             });
         })
