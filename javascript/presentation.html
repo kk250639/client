@@ -25,14 +25,18 @@
         crossorigin="anonymous"></script>
 
     <script>
-        document.querySelector("#btn1").addEventListener("click", function () {
-            let elem = document.createElement("p")
+        document.querySelector("#btn1").addEventListener("click", () => {
+            let elem = document.createElement("p");
             document.querySelector("#box").append(elem);
         })
-        document.querySelector("#btn2").addEventListener("click")
-
-
-
+        document.querySelector("#btn1").addEventListener("click", () => {
+            let elem = document.createElement("p");
+            document.querySelector("#box").prepend(elem);
+        })
+        document.querySelector("#btn1").addEventListener("click", () => {
+            let elem = document.createElement("p");
+            do
+        })
     </script>
 </body>
 
