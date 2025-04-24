@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEMO PAD with Comment</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-12 col-lg-8 mx-auto">
+                <div class="text-center mb-4">
+                    <h1>MEMO PAD + COMMENT</h1>
+                </div>
+                <div class="input-group mb-2">
+                    <textarea id="input1" class="form-control" rows="3" placeholder="메모를 입력하세요"></textarea>
+                    <button id="btn1" class="btn btn-outline-secondary">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+                <ul id="list1" class="list-group"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ... 기존 코드 유지 ... -->
+
+    <script>
+        let memos = JSON.parse(localStorage.getItem("memoPad")) || [];
+        const list = document.querySelector("#list1");
+
+        function saveMemos() {
+            localStorage.setItem("memoPad", JSON.stringify(memos));
+        }
+
+        function renderMemos() {
+            list.innerHTML = "";
+            memos.forEach((memo, index) => {
+                let li = document.createElement("li");
+                li.className = "list-group-item";
+
+                li.innerHTML = `
+                <div class="d-flex justify-content-between align-items-center">
+                    <div id="memo-text-${index}"><strong>${memo.text}</strong></div>
+                    <div class="btn-group btn-group-sm">
+                        <button class="btn btn-outline-primary" onclick="editMemo(${index})">
+                            <i class="fa-solid fa-pen"></i>
+                        </button>
+                        <button class="btn btn-outline-danger" onclick="removeMemo(${index})">
+                            <i class="fa-regular fa-trash-can"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <textarea class="form-control form-control-sm" rows="2"
+                        placeholder="주석을 입력하세요"
+                        oninput="updateComment(${index}, this.value)">${memo.comment || ""}</textarea>
+                </div>
+            `;
+                list.appendChild(li);
+            });
+        }
+
+        function updateComment(index, value) {
+            memos[index].comment = value;
+            saveMemos();
+        }
+
+        function removeMemo(index) {
+            memos.splice(index, 1);
+            saveMemos();
+            renderMemos();
+        }
+
+        function editMemo(index) {
+            const memoDiv = document.querySelector(`#memo-text-${index}`);
+            const originalText = memos[index].text;
+
+            memoDiv.innerHTML = `
+            <input type="text" id="edit-input-${index}" class="form-control form-control-sm" value="${originalText}">
+            <button class="btn btn-sm btn-success mt-1" onclick="saveEdit(${index})">
+                저장
+            </button>
+        `;
+        }
+
+        function saveEdit(index) {
+            const input = document.querySelector(`#edit-input-${index}`);
+            const newText = input.value.trim();
+            if (newText === "") return;
+
+            // 기존 메모 수정 + 삭제
+            const editedMemo = memos.splice(index, 1)[0];
+            editedMemo.text = newText;
+
+            // 배열 맨 앞에 다시 추가
+            memos.unshift(editedMemo);
+
+            saveMemos();
+            renderMemos();
+        }
+
+
+        document.querySelector("#btn1").addEventListener("click", function () {
+            const input = document.querySelector("#input1");
+            const v = input.value.trim();
+
+            if (v === "") return;
+
+            memos.unshift({ text: v, comment: "" });
+            input.value = "";
+            saveMemos();
+            renderMemos();
+        });
+
+        renderMemos();
+    </script>
+
+</body>
+
+</html>
